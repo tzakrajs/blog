@@ -8,7 +8,7 @@ setup(
         name='blog',
         version=blog.__version__,
 
-        description='a simple conference bridge solution using Twiio',
+        description='a very simple blog framework',
         long_description=open('README.rst').read(),
 
         author='Thomas Zakrajsek',
@@ -22,18 +22,20 @@ setup(
         packages=['blog'],
         package_dir={'blog': 'blog'},
         package_data={'blog': ['views/*.tpl',
-                                     'static/js/*.js',
-                                     'static/css/*.css',
-                                     'static/img/*.png',
-                                     'static/img/*.gif']},
+                               'static/js/*.js',
+                               'static/css/*.css',
+                               'static/img/*.png',
+                               'static/img/*.gif',
+                               'controllers/*.py',
+                               'models/*.py']},
 
         license=open('LICENSE').read(),
 
         install_requires=[
-                    'twilio == 3.5.1',
+                    'bottle >= 0.12',
                 ],
 
-        keywords='twilio conference bridge',
+        keywords='blog framework software',
         classifiers=[
                     'Development Status :: 3 - Alpha',
                     'Programming Language :: Python',
