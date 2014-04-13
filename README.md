@@ -12,14 +12,10 @@ Skip to [here](#apache-and-mod_wsgi) for Apache + mod_wsgi instructions
 
 To start, you will want to install the module:
 
-.. code-block:: console
-
     $ sudo python ./setup.py install
 
 
 Then you can start the server with:
-
-.. code-block:: console
 
     $ run_server.py
     Bottle v0.12.5 server starting up (using WSGIRefServer())...
