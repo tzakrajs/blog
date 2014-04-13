@@ -1,18 +1,15 @@
-BridgeBeam
-==========
+BLOG
+====
 
 What is it?
 -----------
-BridgeBeam is a Python application built around Bottle that maintains state using sqlite3 and has three distinct endpoints.
-
-1. **/** This is the home page that you use to control BridgeBeam (a.k.a webui)
-   
-2. **/api/v1/** These are the resources being hit by the AJAX client on the webui or other API consumers
-
-3. **/twiml/** These resources are in twiml format made specically for Twilio callbacks
+Blog is the beggining of a web framework for small projects based on bridgebeam
 
 How do I install it?
 --------------------
+
+Skip to [here](#apache) for Apache + mod_wsgi instructions
+
 To start, you will want to install the module:
 
 .. code-block:: console
@@ -20,24 +17,17 @@ To start, you will want to install the module:
     $ sudo python ./setup.py install
 
 
-Then you can configure and start the server with these commands:
+Then you can start the server with:
 
 .. code-block:: console
 
-    >>> # Import the bottle application
-    >>> from blog import application
-    >>> # Configure some variables
-    >>> application.config.Twiml.callback_base_url='http://somedomain.com:8080'
-    >>> application.config.Twilio.account_sid='AC3813535560204085626521'
-    >>> application.config.Twilio.auth_token='2flnf5tdp7so0lmfdu3d7wod'
-    >>> application.config.DB.path='/var/lib/blog/blog.db'
-    >>> # Import the routes that bind to the bottle application
-    >>> from blog.controllers import *
-    >>> # Start the application server loop
-    >>> application.run(host='0.0.0.0', port=8080)
-    Bottle v0.11.4 server starting up (using WSGIRefServer())...
+    $ run_server.py
+    Bottle v0.12.5 server starting up (using WSGIRefServer())...
     Listening on http://0.0.0.0:8080/
     Hit Ctrl-C to quit.
 
+<a name="apache"></a>Apache + mod_wsgi Setup
+------------------------
 
-There is a working sample included named run_server.py that can also be loaded with mod_wsgi for easy deployment on your favorite web server.
+1. git clone project into a directory which is writeable by apache
+1. set WSGIScriptAlias to point at the full path of run_server.py
