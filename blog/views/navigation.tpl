@@ -21,10 +21,7 @@
               </li>
               % end
               <li {{active if r_path == '/login' else None}}>
-              % from blog.models.auth import Auth
-              % sid = request.cookies.get('SID')
               % try:
-              %     username = Auth().get_session(sid).get('username')
                 <div class="dropdown">
                   <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
                       {{username}}
