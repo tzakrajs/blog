@@ -8,7 +8,7 @@ Blog is the beggining of a web framework for small projects based on bridgebeam
 How do I install it?
 --------------------
 
-Skip to [here](#apache) for Apache + mod_wsgi instructions
+Skip to [here](#apache-and-mod_wsgi) for Apache + mod_wsgi instructions
 
 To start, you will want to install the module:
 
@@ -26,7 +26,7 @@ Then you can start the server with:
     Listening on http://0.0.0.0:8080/
     Hit Ctrl-C to quit.
 
-<a name="apache"></a>Apache + mod_wsgi Setup
+Apache and mod_wsgi
 ------------------------
 
 1. git clone project into a directory which is writeable by apache
