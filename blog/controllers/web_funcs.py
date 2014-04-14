@@ -16,4 +16,5 @@ def blog_template(template_file, **kwargs):
             raise Exception("missing SID cookie")
     except Exception, e:
         log.warning("Exception caught: user has no session - {}".format(e))
+    log.debug(kwargs)
     return template(template_file, **kwargs)
