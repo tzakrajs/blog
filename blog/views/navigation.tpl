@@ -1,3 +1,7 @@
+    <style>
+    <!--
+    -->
+    </style>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -9,12 +13,8 @@
           <a class="brand" href="/">tz</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              % from bottle import request
               % active = 'class=active'
-              % r_path = request.urlparts.path
-              % paths = ('/', 'Home'), \
-              %         ('/about', 'About')
-	      % for path, label in paths:
+	      % for path, label in menu:
               % 
               <li {{active if r_path == path else None}}>
                 <a href="{{path}}">{{label}}</a>
@@ -23,7 +23,7 @@
               <li {{active if r_path == '/login' else None}}>
               % try:
                 <div class="dropdown">
-                  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                  <button class="btn btn-inverse dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
                       {{username}}
                     <span class="caret"></span>
                   </button>

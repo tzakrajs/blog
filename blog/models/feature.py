@@ -15,6 +15,13 @@ class Feature(object):
         except Exception, e:
             raise e
 
+    def get_all(self):
+        """Returns all features"""
+        try:
+            return self.featuredb.get_all()
+        except Exception as e:
+            raise e
+
     def get(self, path):
         """Returns features given a path"""
         try:

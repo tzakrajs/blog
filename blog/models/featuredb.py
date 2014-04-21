@@ -26,7 +26,16 @@ class FeatureDB(SQLite):
     def get(self, path='404'):
         """Returns feature or 404 page"""
         q = "SELECT * FROM features WHERE path = ?"
-        r = self._query(q, (path,), fetch='all')
+        r = self._query(q, (path,), fetch='one')
+        try:
+            return r
+        except Exception as e:
+            raise e
+
+    def get_all(self):
+        """Returns all features"""
+        q = "SELECT * FROM features ORDER BY path"
+        r = self._query(q, tuple(), fetch='all')
         try:
             return r
         except Exception as e:
